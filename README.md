@@ -60,6 +60,8 @@ Cuando hacemos la consulta
 http://localhost:8080/productosRecientes
 ```
 
+![](./images/postman.png)
+
 hay 6 queries hechos a la base:
 
 ```sql
