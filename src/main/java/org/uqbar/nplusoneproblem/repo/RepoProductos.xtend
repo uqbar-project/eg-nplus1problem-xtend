@@ -1,5 +1,6 @@
 package org.uqbar.nplusoneproblem.repo
 
+import javax.persistence.criteria.JoinType
 import org.uqbar.nplusoneproblem.domain.Producto
 
 class RepoProductos extends AbstractRepo<Producto> {
@@ -15,14 +16,14 @@ class RepoProductos extends AbstractRepo<Producto> {
 		instance
 	}
 
-	def getProductos() {
+	def getProductosRecientes() {
 		val criteria = entityManager.criteriaBuilder
 		val preparedQuery = criteria.createQuery(typeof(Producto))
-		val from = preparedQuery.from(Producto)
+		val fromProducto = preparedQuery.from(Producto)
 		// evita n + 1 queries
-		// from.join("proveedores")
-		preparedQuery.select(from)
-		preparedQuery.orderBy(criteria.asc(from.get("fechaIngreso")))
+		fromProducto.fetch("proveedores")
+		preparedQuery.select(fromProducto)
+		preparedQuery.orderBy(criteria.asc(fromProducto.get("fechaIngreso")))
 		val query = entityManager.createQuery(preparedQuery)
 		query.maxResults = 5
 		query.resultList

@@ -34,5 +34,5 @@ class Producto {
 	@JsonProperty("proveedores")
 	def Set<String> getNombresDeProveedores() {
 		proveedores.map [ prov | prov.nombre ].toSet
-	}	
+	}
 }
