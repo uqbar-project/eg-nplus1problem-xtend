@@ -16,7 +16,7 @@ class ProductosBootstrap {
 			fabricantes.add(crearFabricante(i))
 		]
 		
-		(1..50).forEach [ i |
+		(1..5000).forEach [ i |
 			crearProducto(i, fabricantes)			
 		]
 	}

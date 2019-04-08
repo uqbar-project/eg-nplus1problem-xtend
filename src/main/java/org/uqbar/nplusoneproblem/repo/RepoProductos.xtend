@@ -21,7 +21,7 @@ class RepoProductos extends AbstractRepo<Producto> {
 		val preparedQuery = criteria.createQuery(typeof(Producto))
 		val fromProducto = preparedQuery.from(Producto)
 		// evita n + 1 queries
-		fromProducto.fetch("proveedores")
+		//fromProducto.fetch("proveedores")
 		preparedQuery.select(fromProducto)
 		preparedQuery.orderBy(criteria.asc(fromProducto.get("fechaIngreso")))
 		val query = entityManager.createQuery(preparedQuery)
