@@ -1,6 +1,5 @@
 package org.uqbar.nplusoneproblem.repo
 
-import javax.persistence.criteria.JoinType
 import org.uqbar.nplusoneproblem.domain.Producto
 
 class RepoProductos extends AbstractRepo<Producto> {
