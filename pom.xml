@@ -5,7 +5,10 @@
 	<groupId>org.uqbar</groupId>
 	<artifactId>eg-nplus1problem-xtend</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
 	<!-- Dependencias de Hibernate y de conexión a la base de datos -->
 	<dependencies>
 		<dependency>
