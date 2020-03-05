@@ -159,7 +159,7 @@ Para evitar que el query haga N + 1 llamadas, vamos a definir una operación fet
 ```xtend
 def getProductosRecientes() {
 	val criteria = entityManager.criteriaBuilder
-	val preparedQuery = criteria.createQuery(typeof(Producto))
+	val preparedQuery = criteria.createQuery(Producto)
 	val fromProducto = preparedQuery.from(Producto)
 	// evita n + 1 queries
 	fromProducto.fetch("proveedores")
