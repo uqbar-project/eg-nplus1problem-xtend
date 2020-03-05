@@ -17,7 +17,7 @@ class RepoProductos extends AbstractRepo<Producto> {
 
 	def getProductosRecientes() {
 		val criteria = entityManager.criteriaBuilder
-		val preparedQuery = criteria.createQuery(typeof(Producto))
+		val preparedQuery = criteria.createQuery(Producto)
 		val fromProducto = preparedQuery.from(Producto)
 		// evita n + 1 queries
 		//fromProducto.fetch("proveedores")

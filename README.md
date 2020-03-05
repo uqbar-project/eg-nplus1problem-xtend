@@ -41,7 +41,7 @@ Los productos recientes se obtienen en base a la siguiente consulta al repo:
 ```xtend
 def getProductosRecientes() {
 	val criteria = entityManager.criteriaBuilder
-	val preparedQuery = criteria.createQuery(typeof(Producto))
+	val preparedQuery = criteria.createQuery(Producto)
 	val from = preparedQuery.from(Producto)
 	preparedQuery.select(from)
 	preparedQuery.orderBy(criteria.asc(from.get("fechaIngreso")))
